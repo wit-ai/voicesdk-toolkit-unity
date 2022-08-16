@@ -1,0 +1,22 @@
+{
+  "name": "com.facebook.witai.toolkit",
+  "displayName": "VoiceSDK - Toolkit",
+  "version": "43.0.1",
+  "dependencies": {
+    "com.assistant.sdk.core": "0.0.8",
+    "com.facebook.witai": "0.0.37",
+    "com.unity.textmeshpro": "3.0.6"
+  },
+  "samples": [
+    {
+      "displayName": "Toolkit Collection",
+      "description": "The sample shows all the assets and building blocks we provided in the toolkit",
+      "path": "Scenes"
+    }
+  ],
+  "unity": "2019.4",
+  "author": {
+    "name": "Wit.ai",
+    "url": "https://wit.ai"
+  }
+}
