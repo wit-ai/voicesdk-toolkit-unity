@@ -1,10 +1,10 @@
 {
   "name": "com.facebook.witai.toolkit",
-  "displayName": "VoiceSDK - Toolkit",
+  "displayName": "Meta - Voice SDK - Toolkit",
   "version": "43.0.1",
   "dependencies": {
     "com.assistant.sdk.core": "0.0.8",
-    "com.facebook.witai": "0.0.37",
+    "com.facebook.witai": "0.0.47",
     "com.unity.textmeshpro": "3.0.6"
   },
   "samples": [
@@ -16,7 +16,7 @@
   ],
   "unity": "2019.4",
   "author": {
-    "name": "Wit.ai",
+    "name": "Meta - Voice SDK",
     "url": "https://wit.ai"
   }
 }
