@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using Facebook.WitAi.Events;
+using UnityEngine.Serialization;
+
 namespace Oculus.Voice.Toolkit
 {
     [System.Serializable]
@@ -25,31 +27,14 @@ namespace Oculus.Voice.Toolkit
             this.stateMask = states;
         }
     }
-    public class VoiceUI : MonoBehaviour
+
+    public class VoiceUI : BuildingBlockBase
     {
-        [SerializeField] protected VoiceUXAdapter voiceUXAdapter;
         public VoiceState registerStates;
+        [Header("** Events are automatically populated based on register states" )]
         public List<VoiceUIEvent> events = new List<VoiceUIEvent>();
 
-        protected virtual void OnValidate()
-        {
-            if (!voiceUXAdapter) voiceUXAdapter = FindObjectOfType<VoiceUXAdapter>();
-        }
-
-        protected virtual void Awake()
-        {
-            if (!voiceUXAdapter) voiceUXAdapter = FindObjectOfType<VoiceUXAdapter>();
-        }
-
-        void OnEnable()
-        {
-            voiceUXAdapter.voiceUIEvent += EventHandler;
-        }
-        void OnDisable()
-        {
-            voiceUXAdapter.voiceUIEvent -= EventHandler;
-        }
-        void EventHandler(VoiceState state, VoiceDataBase dataObject)
+        public override void EventHandler(VoiceState state, VoiceDataBase dataObject)
         {
             InvokeEvent(state, dataObject);
         }
@@ -104,10 +89,9 @@ namespace Oculus.Voice.Toolkit
             {
                 voiceUIEvent = new VoiceUIEvent(state.ToString(), state);
                 events.Add(voiceUIEvent);
+
             }
         }
-
-
     }
 
 }

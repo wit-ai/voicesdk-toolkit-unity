@@ -11,18 +11,18 @@ using Facebook.WitAi.Lib;
 using Facebook.WitAi.Events;
 using Facebook.WitAi;
 using System;
+using System.Collections.Generic;
 
 namespace Oculus.Voice.Toolkit
 {
     public class VoiceUXAdapter : MonoBehaviour
     {
-        [Header("Components")]
         [SerializeField] protected VoiceService voiceService;
-
         public Action<VoiceState, VoiceDataBase> voiceUIEvent;
+
         [Header("Voice Data")]
-        private NLUResponseData _responseStateData = null;
-        private ListeningData _listeningData = null;
+        private NLUResponseData _responseStateData;
+        private ListeningData _listeningData ;
         //TODO: this is the temp variable , will need to remove once the miclevelchanged start to send normalized data
         private float _micLevelMultiplyer = 100;
 
@@ -61,45 +61,34 @@ namespace Oculus.Voice.Toolkit
             voiceService.VoiceEvents.OnMicLevelChanged.RemoveListener(MicLevelChangedHandler);
             voiceService.VoiceEvents.OnError.RemoveListener(ErrorHandler);
         }
-
-
-#if UNITY_EDITOR
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                ActiveMicrophone();
-            }
-        }
-#endif
-
-        public void ActiveMicrophone()
+        public void Activate()
         {
             voiceService.Activate();
         }
 
+        public void Deactivate()
+        {
+            voiceService.Deactivate();
+        }
+
         private void TranscriptionHandler(string trascription)
         {
-            if (_listeningData == null) {
-                Debug.LogWarning(" no listening data");
+            if (_listeningData == null)
+            {
                 return;
             }
             _listeningData.transcription = trascription;
-            voiceUIEvent.Invoke(VoiceState.Listening, _listeningData);
+            voiceUIEvent?.Invoke(VoiceState.Listening, _listeningData);
         }
 
         private void MicLevelChangedHandler(float micLevel)
         {
             if (_listeningData == null)
             {
-                Debug.LogWarning(" no listening data");
                 return;
             }
             _listeningData.micLevel = micLevel * _micLevelMultiplyer;
-            //float normal = Mathf.InverseLerp(_minVol, _maxVol, data.micLevel);
-            //float value = Mathf.Lerp(_minScale, _maxScale, normal);
-
-            voiceUIEvent.Invoke(VoiceState.Listening, _listeningData);
+            voiceUIEvent?.Invoke(VoiceState.Listening, _listeningData);
         }
 
         #region VoiceSDK
@@ -107,12 +96,13 @@ namespace Oculus.Voice.Toolkit
         {
             if (_listeningData == null) _listeningData = new ListeningData();
             _responseStateData = null;
-            voiceUIEvent.Invoke(VoiceState.MicOn, null);
+            voiceUIEvent?.Invoke(VoiceState.MicOn, null);
         }
         private void StopListeningHandler()
         {
-            voiceUIEvent.Invoke(VoiceState.MicOff, null);
+            voiceUIEvent?.Invoke(VoiceState.MicOff, null);
             _listeningData = null;
+
             //TODO: it's hack, need to figure out why it doesn't get OnMicDataSent call back.
             MicDataSentHandler();
         }
@@ -121,23 +111,23 @@ namespace Oculus.Voice.Toolkit
             _responseStateData = new NLUResponseData();
             _responseStateData.requestTime = DateTime.UtcNow;
             _responseStateData.responseTime = DateTime.UtcNow;
-            voiceUIEvent.Invoke(VoiceState.StartProcessing, _responseStateData);
+            voiceUIEvent?.Invoke(VoiceState.StartProcessing, _responseStateData);
         }
 
         private void ResponseHandler(WitResponseNode responseData)
         {
-            if (_responseStateData != null)
+            if (_responseStateData != null  && responseData!= null)
             {
                 _responseStateData.responseTime = DateTime.UtcNow;
                 _responseStateData.response = responseData;
-                voiceUIEvent.Invoke(VoiceState.Response, _responseStateData);
+                voiceUIEvent?.Invoke(VoiceState.Response, _responseStateData);
             }
         }
 
         private void ErrorHandler(string type, string message)
         {
             ErrorData data = new ErrorData(type, message);
-            voiceUIEvent.Invoke(VoiceState.Error, data);
+            voiceUIEvent?.Invoke(VoiceState.Error, data);
         }
         #endregion VoiceSDK
     }
