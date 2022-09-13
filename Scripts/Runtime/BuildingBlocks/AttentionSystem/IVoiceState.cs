@@ -38,17 +38,20 @@ namespace Oculus.Voice.Toolkit
         void ListeningHandler(VoiceDataBase data);
     }
 
-    [Serializable]
+    /// <summary>
+    /// Implement this interface if you register the listening state from VoiceUI Script.
+    /// The data you received in the function should be converted to ListeningData. Example: ListeningData data = dataObj as ListeningData;
+    /// </summary>
+    public interface IResponseState
+    {
+        void ResponseHandler(VoiceDataBase data);
+    }
     public class VoiceDataBase
     {
     }
-
-    [Serializable]
     public class MicData : VoiceDataBase
     {
     }
-
-    [Serializable]
     public class ErrorData : VoiceDataBase
     {
 
@@ -60,15 +63,11 @@ namespace Oculus.Voice.Toolkit
         public string type;
         public string message;
     }
-
-    [Serializable]
     public class ListeningData : VoiceDataBase
     {
         public float micLevel = 0;
         public string transcription = String.Empty;
     }
-
-    [Serializable]
     public class NLUResponseData : VoiceDataBase
     {
         public DateTime requestTime;
