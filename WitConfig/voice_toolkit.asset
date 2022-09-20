@@ -12,15 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
   m_Name: voice_toolkit
   m_EditorClassIdentifier: 
-  application:
-    witConfiguration: {fileID: 0}
+  _clientAccessToken: KWSH2VYMQQ76LUWMX2GQNASS5EQBZ33C
+  _appInfo:
     name: voice_toolkit
     id: e34355a2-ebc8-4ee8-9438-8785b99a0501
     lang: en
     isPrivate: 1
     createdAt: 2022-05-04T19:31:37-0700
-  configId: b81663ac461abf045b2b5de4cd2ede59
-  clientAccessToken: KWSH2VYMQQ76LUWMX2GQNASS5EQBZ33C
+    trainingStatus: 0
+    lastTrainDuration: 0
+    lastTrainedAt: 
+    nextTrainAt: 
+    intents: []
+    entities: []
+    traits: []
+  _configurationId: b81663ac461abf045b2b5de4cd2ede59
   timeoutMS: 10000
   endpointConfiguration:
     uriScheme: 
@@ -29,117 +35,7 @@ MonoBehaviour:
     witApiVersion: 
     speech: 
     message: 
-  entities:
-  - witConfiguration: {fileID: 11400000}
-    id: 537995664491351
-    name: color
-    lookups:
-    - free-text
-    - keywords
-    roles:
-    - id: 373529684828428
-      name: color
-    keywords:
-    - keyword: black
-      synonyms:
-      - black
-    - keyword: blue
-      synonyms:
-      - blue
-    - keyword: brown
-      synonyms:
-      - brown
-    - keyword: gold
-      synonyms:
-      - gold
-    - keyword: green
-      synonyms:
-      - green
-    - keyword: magenta
-      synonyms:
-      - magenta
-    - keyword: maroon
-      synonyms:
-      - maroon
-      - red
-    - keyword: orange
-      synonyms:
-      - orange
-    - keyword: pink
-      synonyms:
-      - pink
-    - keyword: purple
-      synonyms:
-      - purple
-    - keyword: red
-      synonyms:
-      - red
-    - keyword: violet
-      synonyms:
-      - violet
-    - keyword: white
-      synonyms:
-      - white
-    - keyword: yellow
-      synonyms:
-      - yellow
-  - witConfiguration: {fileID: 11400000}
-    id: 620063716149375
-    name: shape
-    lookups:
-    - keywords
-    roles:
-    - id: 1651266555238469
-      name: shape
-    keywords:
-    - keyword: capsule
-      synonyms:
-      - capsule
-    - keyword: cube
-      synonyms:
-      - cube
-      - square
-    - keyword: cylinder
-      synonyms:
-      - cylinder
-      - tube
-    - keyword: sphere
-      synonyms:
-      - ball
-      - sphere
-  - witConfiguration: {fileID: 11400000}
-    id: 535a80ff-e693-40c1-b67e-6f3e8e7144b8
-    name: wit$distance
-    lookups: []
-    roles:
-    - id: 538365427773956
-      name: distance
-    keywords: []
-  intents:
-  - witConfiguration: {fileID: 11400000}
-    id: 677936610137070
-    name: change_color
-    entities:
-    - witConfiguration: {fileID: 11400000}
-      id: 373529684828428
-      name: color:color
-      lookups: []
-      roles: []
-      keywords: []
-    - witConfiguration: {fileID: 11400000}
-      id: 1651266555238469
-      name: shape:shape
-      lookups: []
-      roles: []
-      keywords: []
-  - witConfiguration: {fileID: 11400000}
-    id: 588021065594958
-    name: move_position
-    entities:
-    - witConfiguration: {fileID: 11400000}
-      id: 538365427773956
-      name: wit$distance:distance
-      lookups: []
-      roles: []
-      keywords: []
-  traits: []
+    dictation: 
+  isDemoOnly: 0
+  useConduit: 1
+  _manifestLocalPath: ConduitManifest-15b041e9-da6c-40f0-b6ac-e9eddd2296a1.json

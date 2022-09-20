@@ -7,11 +7,10 @@
  */
 
 using UnityEngine;
-using Facebook.WitAi.Lib;
 using Facebook.WitAi.Events;
 using Facebook.WitAi;
 using System;
-using System.Collections.Generic;
+using Meta.WitAi.Json;
 
 namespace Oculus.Voice.Toolkit
 {
