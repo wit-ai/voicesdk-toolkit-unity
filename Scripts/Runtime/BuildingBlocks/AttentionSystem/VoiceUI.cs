@@ -17,11 +17,14 @@ using UnityEngine.Serialization;
 namespace Oculus.Voice.Toolkit
 {
     [System.Serializable]
+    public class VoiceDataEvent : UnityEvent<VoiceDataBase> {}
+
+    [System.Serializable]
     public class VoiceUIEvent
     {
         [HideInInspector] public string name;
         [HideInInspector] public VoiceState stateMask;
-        public UnityEvent<VoiceDataBase> uiEvent = new UnityEvent<VoiceDataBase>();
+        public VoiceDataEvent uiEvent = new VoiceDataEvent();
         public VoiceUIEvent(string name, VoiceState states) {
             this.name = name;
             this.stateMask = states;
