@@ -9,7 +9,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
-using Facebook.WitAi.Events;
+using Meta.WitAi.Events;
 using UnityEngine.Serialization;
 
 namespace Oculus.Voice.Toolkit

@@ -11,7 +11,7 @@ using UnityEngine.Events;
 using System.Collections.Generic;
 using System.Linq;
 using System;
-using Facebook.WitAi.Events;
+using Meta.WitAi.Events;
 using UnityEngine.Serialization;
 
 namespace Oculus.Voice.Toolkit

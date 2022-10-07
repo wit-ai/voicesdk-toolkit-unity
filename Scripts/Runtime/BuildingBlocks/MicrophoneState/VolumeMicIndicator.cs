@@ -7,10 +7,10 @@
  */
 
 using System;
-using Facebook.WitAi.Events;
-using Facebook.WitAi.Events.UnityEventListeners;
-using Facebook.WitAi.Interfaces;
-using Facebook.WitAi.ServiceReferences;
+using Meta.WitAi.Events;
+using Meta.WitAi.Events.UnityEventListeners;
+using Meta.WitAi.Interfaces;
+using Meta.WitAi.ServiceReferences;
 using UnityEngine;
 using UnityEngine.Events;
 

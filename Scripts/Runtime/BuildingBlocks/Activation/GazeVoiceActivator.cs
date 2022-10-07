@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-using Facebook.WitAi.Utilities;
+using Meta.WitAi.Utilities;
 using UnityEngine;
 
 namespace Oculus.Voice.Toolkit.Activation

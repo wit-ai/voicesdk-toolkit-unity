@@ -8,7 +8,7 @@
 
 using System;
 using UnityEngine;
-using Facebook.WitAi.Events;
+using Meta.WitAi.Events;
 
 namespace Oculus.Voice.Toolkit
 {
