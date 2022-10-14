@@ -6,10 +6,12 @@ The VoiceSDK Toolkit (VSTK) is an open-source project to share foundational asse
 <br>
 
 ## Documentation
-* [Intro](https://developer.oculus.com/resources/vstk-toolkit-overview)
-* [Foundational Assets](https://developer.oculus.com/resources/vstk-asset-library)
-* [Building Blocks](https://developer.oculus.com/resources/vstk-building-blocks-overview)
-* [Attention System](https://developer.oculus.com/resources/vstk-attention-system)
+* [Intro](https://developer.oculus.com/resources/vstk-overview)
+* [Assets Library](https://developer.oculus.com/resources/vstk-assets)
+* [Assets Library - Icons](https://developer.oculus.com/resources/vstk-icons)
+* [Assets Library - Sounds](https://developer.oculus.com/resources/vstk-sounds)
+* [Building Blocks](https://developer.oculus.com/resources/vstk-buildingblocks)
+* [Attention System](https://developer.oculus.com/resources/vstk-attentionsystems)
 
 ![image](https://user-images.githubusercontent.com/645359/180054321-de16a900-5c8b-47cf-8de6-a8213ff6c841.png)
 
