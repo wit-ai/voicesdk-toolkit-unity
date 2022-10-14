@@ -9,6 +9,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Meta.WitAi.Events;
+using UnityEngine;
 
 namespace Oculus.Voice.Toolkit
 {
@@ -29,6 +30,22 @@ namespace Oculus.Voice.Toolkit
             return value | toAdd;
         }
         #endregion VoiceState
+
+        //TODO: This could potentially slow down the application if there are many objects checking at the same time.
+        public static bool InCameraFOV(Camera c, GameObject target)
+        {
+            Plane[] planes = GeometryUtility.CalculateFrustumPlanes(c);
+            Vector3 point = target.transform.position;
+
+            for (int i = 0; i< planes.Length; i++)
+            {
+                if (planes[i].GetDistanceToPoint(point) < 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 
 
