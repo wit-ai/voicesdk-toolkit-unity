@@ -5,7 +5,7 @@
   "dependencies": {
     "com.assistant.sdk.core": "0.0.8",
     "com.facebook.witai": "0.0.47",
-    "com.unity.textmeshpro": "3.0.6"
+    "com.unity.textmeshpro": "2.1.6"
   },
   "samples": [
     {
