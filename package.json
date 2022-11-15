@@ -1,11 +1,11 @@
 {
   "name": "com.facebook.witai.toolkit",
   "displayName": "Meta - Voice SDK - Toolkit",
-  "version": "43.0.1",
+  "version": "49.0.2",
   "dependencies": {
     "com.assistant.sdk.core": "0.0.8",
-    "com.facebook.witai": "0.0.47",
-    "com.unity.textmeshpro": "2.1.6"
+    "com.unity.textmeshpro": "2.1.6",
+    "com.assistant.sdk.immersivevoicecommands": "49.0.2"
   },
   "samples": [
     {
