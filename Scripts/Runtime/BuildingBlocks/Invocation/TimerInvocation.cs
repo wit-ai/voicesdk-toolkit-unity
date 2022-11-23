@@ -6,7 +6,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +17,7 @@ namespace Oculus.Voice.Toolkit
     {
         public List<Timer> _timers = new List<Timer>();
         private int _currentIndex = 0;
-        private bool _isStarted = false;
+        public bool IsStarted { get; private set; } = false;
 
         private IEnumerator _updateEnumerator;
 
@@ -52,7 +51,7 @@ namespace Oculus.Voice.Toolkit
             //Update Timer
             _updateEnumerator = TimerUpdate(0.03f);
             StartCoroutine(_updateEnumerator);
-            _isStarted = true;
+            IsStarted = true;
         }
 
         void StartCurrentTimer()
@@ -71,7 +70,7 @@ namespace Oculus.Voice.Toolkit
 
             //Update Timer
             if(_updateEnumerator != null) {StopCoroutine(_updateEnumerator);}
-            _isStarted = false;
+            IsStarted = false;
         }
 
         void StopCurrentTimer()

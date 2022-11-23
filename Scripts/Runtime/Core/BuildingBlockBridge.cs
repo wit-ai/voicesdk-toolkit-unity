@@ -20,7 +20,7 @@ namespace Oculus.Voice.Toolkit
      private VoiceUXAdapter _voiceUXAdapter;
      private bool _isRegisteredEvents = false;
      private bool _wasRegisteredEvents = false;
-     private bool _subscription = false;
+     public bool Subscription { get; private set; } = false;
      public UnityAction<VoiceState, VoiceDataBase> voiceUIEvent;
      [SerializeField]private bool _debugEvent = false;
      public void SetupVoiceUXAdapter(VoiceUXAdapter uxAdapter)
@@ -58,7 +58,7 @@ namespace Oculus.Voice.Toolkit
              if (_voiceUXAdapter != null)
              {
                  _voiceUXAdapter.voiceUIEvent += EventHandler;
-                 _subscription = true;
+                 Subscription = true;
              }
          }
          _isRegisteredEvents = true;
@@ -68,7 +68,7 @@ namespace Oculus.Voice.Toolkit
          if (_voiceUXAdapter != null)
          {
              _voiceUXAdapter.voiceUIEvent -= EventHandler;
-             _subscription = false;
+             Subscription = false;
          }
      }
      /// <summary>
