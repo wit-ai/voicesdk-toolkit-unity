@@ -6,20 +6,19 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
 using System.Linq;
-using System;
 using Meta.WitAi.Events;
-using UnityEngine.Serialization;
 
 namespace Oculus.Voice.Toolkit
 {
-    [System.Serializable]
+    [Serializable]
     public class VoiceDataEvent : UnityEvent<VoiceDataBase> {}
 
-    [System.Serializable]
+    [Serializable]
     public class VoiceUIEvent
     {
         [HideInInspector] public string name;

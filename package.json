@@ -3,9 +3,7 @@
   "displayName": "Meta - Voice SDK - Toolkit",
   "version": "52.0.0",
   "dependencies": {
-    "com.assistant.sdk.core": "0.0.8",
-    "com.unity.textmeshpro": "2.1.6",
-    "com.assistant.sdk.immersivevoicecommands": "51.0.0"
+    "com.unity.textmeshpro": "2.1.6"
   },
   "samples": [
     {
