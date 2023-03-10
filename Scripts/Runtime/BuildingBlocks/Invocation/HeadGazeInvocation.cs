@@ -6,11 +6,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.Events;
 
 namespace Oculus.Voice.Toolkit
 {
@@ -21,20 +19,24 @@ namespace Oculus.Voice.Toolkit
         [SerializeField] private GameObject _targetObject;
         [SerializeField] private int _activationTimingBuffer = 30;
         [SerializeField] private int _cooldownTimingBuffer = 30;
+        [SerializeField] private bool _limitActivationDistance = false;
+        [Min(0f)]
+        [SerializeField] private float _maxActivationDistance = 0;
+        public UnityEvent onGaze = new UnityEvent();
+        public UnityEvent onStoppedGazing = new UnityEvent();
         private int _counter = 0;
         private IEnumerator _coroutine;
         private bool _cooldownDuration = false;
+        private bool _isGazed;
+
         protected void OnValidate()
         {
             _syncActivation = true;
         }
-        protected void Awake()
-        {
-            if (!_camera) _camera = Camera.main;
-        }
-
+        
         protected void OnEnable()
         {
+            if (!_camera) _camera = Camera.main;
             _coroutine = CheckFocus(0.03f);
             StartCoroutine(_coroutine);
         }
@@ -62,19 +64,30 @@ namespace Oculus.Voice.Toolkit
         {
             while (true)
             {
-                bool _isFoucs = HasFocus();
-                if (_isFoucs && !IsActivated && !_cooldownDuration)
+                bool hasFocus = HasFocus();
+                if (_isGazed != hasFocus)
                 {
-                    if (_counter >= _activationTimingBuffer)
+                    if(hasFocus) onGaze.Invoke();
+                    else onStoppedGazing.Invoke();
+                    _isGazed = hasFocus;
+                }
+                
+                if (hasFocus && !IsActivated && !_cooldownDuration)
+                {
+                    var cameraDistance = Vector3.Distance(_camera.transform.position, transform.position);
+                    if (_maxActivationDistance <= 0 || !_limitActivationDistance || cameraDistance < _maxActivationDistance)
                     {
-                        base.Activate();
-                    }
-                    else
-                    {
-                        _counter++;
+                        if (_counter >= _activationTimingBuffer)
+                        {
+                            base.Activate();
+                        }
+                        else
+                        {
+                            _counter++;
+                        }
                     }
                 }
-                else if(!_isFoucs || _cooldownDuration)
+                else if(!hasFocus || _cooldownDuration)
                 {
                     if (_counter <= 0)
                     {
@@ -94,7 +107,5 @@ namespace Oculus.Voice.Toolkit
         {
             return VoiceUXUtility.InCameraFOV(_camera,_targetObject);
         }
-
     }
-
 }

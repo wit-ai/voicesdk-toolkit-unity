@@ -8,6 +8,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 namespace Oculus.Voice.Toolkit
 {
@@ -18,6 +19,8 @@ namespace Oculus.Voice.Toolkit
         public bool IsActivated => _isActivated;
         public Action On;
         public Action Off;
+        public UnityEvent onActivate = new UnityEvent();
+        public UnityEvent onDeactivate = new UnityEvent();
 
         public void Activate()
         {
@@ -25,6 +28,7 @@ namespace Oculus.Voice.Toolkit
             {
                 _isActivated = true;
                 On?.Invoke();
+                onActivate?.Invoke();
             }
         }
 
@@ -34,6 +38,7 @@ namespace Oculus.Voice.Toolkit
             {
                 _isActivated = false;
                 Off?.Invoke();
+                onDeactivate?.Invoke();
             }
         }
         public void ToggleActivation()
