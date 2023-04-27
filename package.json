@@ -9,7 +9,7 @@
     {
       "displayName": "Toolkit Collection",
       "description": "The sample shows all the assets and building blocks we provided in the toolkit",
-      "path": "Scenes"
+      "path": "Samples/ToolkitCollection"
     },
     {
       "displayName": "Gallery",
