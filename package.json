@@ -1,7 +1,7 @@
 {
   "name": "com.meta.witai.toolkit",
   "displayName": "Meta - Voice SDK - Toolkit",
-  "version": "56.0.0",
+  "version": "57.0.0",
   "dependencies": {
     "com.unity.textmeshpro": "2.1.6"
   },
