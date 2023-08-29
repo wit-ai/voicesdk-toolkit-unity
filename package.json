@@ -30,5 +30,6 @@
     "Voice"
   ],
   "description": "The VoiceSDK Toolkit (VSTK) is an open-source project to share foundational assets, building blocks, and samples for common interactions for creating a custom voice experience in Unity.",
-  "licensesUrl": "https://opensource.org/license/mit/"
+  "licensesUrl": "https://opensource.org/license/mit/",
+  "licenseMessage": ""
 }
