@@ -2,7 +2,7 @@
     "name": "VoiceSDK.Toolkit.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:3c154ffea1cb941c38e03944214a0a91"
+        "VoiceSDK.Toolkit"
     ],
     "includePlatforms": [
         "Editor"
