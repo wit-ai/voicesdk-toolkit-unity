@@ -4644,7 +4644,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1876394054}
-        m_TargetAssemblyTypeName: Facebook.WitAi.VoiceService, Facebook.WitAI
+        m_TargetAssemblyTypeName: Meta.WitAi.VoiceService, Meta.WitAI
         m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
