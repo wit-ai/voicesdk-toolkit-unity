@@ -1,10 +1,10 @@
 {
   "name": "com.meta.witai.toolkit",
   "displayName": "Meta - Voice SDK - Toolkit",
-  "version": "60.0.0",
+  "version": "61.0.0",
   "dependencies": {
     "com.unity.textmeshpro": "2.1.6",
-    "com.meta.xr.sdk.voice": "60.0.0-mainline.0"
+    "com.meta.xr.sdk.voice": "61.0.0-mainline.0"
   },
   "samples": [
     {
