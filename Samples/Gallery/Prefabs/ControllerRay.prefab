@@ -145,7 +145,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3111705817167248213}
-  - component: {fileID: 9170616049474672604}
   m_Layer: 0
   m_Name: ControllerRay
   m_TagString: Untagged
@@ -175,20 +174,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &9170616049474672604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3111705817167248202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fef51836996cdf346a70421d8620327c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ray: {fileID: 5894405805230252042}
-  _cursor: {fileID: 3111705817585091879}
 --- !u!1 &3111705817583164391
 GameObject:
   m_ObjectHideFlags: 0
