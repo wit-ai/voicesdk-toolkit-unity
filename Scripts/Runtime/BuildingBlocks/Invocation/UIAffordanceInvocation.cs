@@ -6,9 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace Oculus.Voice.Toolkit
 {

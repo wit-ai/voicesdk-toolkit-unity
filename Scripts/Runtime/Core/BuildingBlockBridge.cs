@@ -6,11 +6,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 using Meta.WitAi.Events;
-using UnityEngine.Serialization;
 
 namespace Oculus.Voice.Toolkit
 {

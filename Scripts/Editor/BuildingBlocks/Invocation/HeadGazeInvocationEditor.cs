@@ -7,7 +7,6 @@
  */
 
 using UnityEditor;
-using UnityEngine;
 
 namespace Oculus.Voice.Toolkit
 {

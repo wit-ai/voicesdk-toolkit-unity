@@ -7,8 +7,7 @@
  */
 
 using UnityEditor;
-using UnityEngine;
-using System;
+
 namespace Oculus.Voice.Toolkit
 {
     [CustomEditor(typeof(VoiceUI), true)]
