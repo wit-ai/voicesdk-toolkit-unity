@@ -3,8 +3,7 @@
   "displayName": "Meta - Voice SDK - Toolkit",
   "version": "63.0.0",
   "dependencies": {
-    "com.unity.textmeshpro": "2.1.6",
-    "com.meta.xr.sdk.voice": "63.0.0-mainline.0"
+    "com.meta.xr.sdk.voice": "63.0.0"
   },
   "samples": [
     {
