@@ -3,7 +3,7 @@
   "displayName": "Meta - Voice SDK - Toolkit",
   "version": "69.0.0",
   "dependencies": {
-    "com.meta.xr.sdk.voice": "69.0.0-mainline.0"
+    "com.meta.xr.sdk.voice": "69.0.0"
   },
   "samples": [
     {
