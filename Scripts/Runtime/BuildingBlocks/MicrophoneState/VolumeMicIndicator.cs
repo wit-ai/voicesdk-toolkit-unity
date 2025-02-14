@@ -79,7 +79,7 @@ namespace Oculus.Voice.Toolkit.MicrophoneState
 
         protected virtual void OnValidate()
         {
-            if (!_audioInputService) _audioInputService = FindObjectOfType<AudioInputServiceReference>();
+            if (!_audioInputService) _audioInputService = FindAnyObjectByType<AudioInputServiceReference>();
         }
 
         protected virtual void Awake()
@@ -87,14 +87,14 @@ namespace Oculus.Voice.Toolkit.MicrophoneState
             // Find an audio input service using a search priority if none is set in the inspector.
             if (!_audioInputService) _audioInputService = GetComponent<AudioInputServiceReference>();
             if (!_audioInputService) _audioInputService = GetComponentInParent<AudioInputServiceReference>();
-            if (!_audioInputService) _audioInputService = FindObjectOfType<AudioInputServiceReference>();
+            if (!_audioInputService) _audioInputService = FindAnyObjectByType<AudioInputServiceReference>();
 
             _maxVol = minimumPeakVolume;
         }
 
         protected virtual void OnEnable()
         {
-            if (!_audioInputService) _audioEvents = FindObjectOfType<AudioEventListener>();
+            if (!_audioInputService) _audioEvents = FindAnyObjectByType<AudioEventListener>();
             else _audioEvents = _audioInputService.AudioEvents;
 
             _audioEvents.OnMicAudioLevelChanged.AddListener(OnMicLevelChanged);

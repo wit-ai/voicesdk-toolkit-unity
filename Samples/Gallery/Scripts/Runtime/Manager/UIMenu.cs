@@ -35,7 +35,7 @@ namespace Oculus.Voice.Toolkit.Samples
         [SerializeField]private CharacterController _player;
         private void Awake()
         {
-            _teleportSpots = FindObjectsOfType<TeleportSpot>().ToList();
+            _teleportSpots = FindObjectsByType<TeleportSpot>(FindObjectsSortMode.None).ToList();
         }
 
         private void Update()

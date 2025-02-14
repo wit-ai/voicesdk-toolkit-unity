@@ -33,13 +33,13 @@ namespace Oculus.Voice.Toolkit
         protected virtual void OnValidate()
         {
             if (!invocationAggregation) invocationAggregation = gameObject.GetComponent<InvocationAggregation>();
-            if (!voiceService) voiceService = FindObjectOfType<VoiceService>();
+            if (!voiceService) voiceService = FindAnyObjectByType<VoiceService>();
         }
 
         protected void Awake()
         {
             if (!invocationAggregation) invocationAggregation = gameObject.GetComponent<InvocationAggregation>();
-            if (!voiceService) voiceService = FindObjectOfType<VoiceService>();
+            if (!voiceService) voiceService = FindAnyObjectByType<VoiceService>();
         }
 
 

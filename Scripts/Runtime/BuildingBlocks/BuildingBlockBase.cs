@@ -34,7 +34,7 @@ namespace Oculus.Voice.Toolkit
                 _buildingBlockBridge = ScriptableObject.CreateInstance(typeof(BuildingBlockBridge)) as BuildingBlockBridge;
                 registerFromVoiceService = true;
             }
-            _buildingBlockBridge.SetupVoiceUXAdapter(FindObjectOfType<VoiceUXAdapter>());
+            _buildingBlockBridge.SetupVoiceUXAdapter(FindAnyObjectByType<VoiceUXAdapter>());
             _buildingBlockBridge.ResetValues();
             if (registerFromVoiceService)
             {

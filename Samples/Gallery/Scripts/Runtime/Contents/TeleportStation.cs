@@ -46,7 +46,7 @@ namespace Oculus.Voice.Toolkit.Samples
         void Awake()
         {
             string content = _locationText.text;
-            _teleportSpots = FindObjectsOfType<TeleportSpot>().ToList();
+            _teleportSpots = FindObjectsByType<TeleportSpot>(FindObjectsSortMode.None).ToList();
             for (int i = 0; i < _teleportSpots.Count; i++)
             {
                 if (_teleportSpots[i] != _teleportStation)

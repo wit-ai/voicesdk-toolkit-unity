@@ -39,17 +39,17 @@ namespace Oculus.Voice.Toolkit
 
         protected virtual void OnValidate()
         {
-            if (!voiceService) voiceService = FindObjectOfType<VoiceService>();
+            if (!voiceService) voiceService = FindAnyObjectByType<VoiceService>();
         }
 
         protected virtual void Awake()
         {
-            if (!voiceService) voiceService = FindObjectOfType<VoiceService>();
+            if (!voiceService) voiceService = FindAnyObjectByType<VoiceService>();
         }
 
         protected virtual void OnEnable()
         {
-            if (!voiceService) voiceService = FindObjectOfType<VoiceService>();
+            if (!voiceService) voiceService = FindAnyObjectByType<VoiceService>();
             voiceService.VoiceEvents.OnResponse.AddListener(ResponseHandler);
             voiceService.VoiceEvents.OnStartListening.AddListener(StartListeningHandler);
             voiceService.VoiceEvents.OnStoppedListening.AddListener(StopListeningHandler);
