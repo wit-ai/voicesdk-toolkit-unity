@@ -1,9 +1,9 @@
 {
   "name": "com.meta.witai.toolkit",
   "displayName": "Meta - Voice SDK - Toolkit",
-  "version": "202.0.0",
+  "version": "203.0.0",
   "dependencies": {
-    "com.meta.xr.sdk.voice": "202.0.0-mainline.0"
+    "com.meta.xr.sdk.voice": "203.0.0"
   },
   "samples": [
     {
